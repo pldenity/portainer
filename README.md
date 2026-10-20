@@ -64,7 +64,7 @@ git branch -M main
 
 # Czyszczenie złego adresu i dodanie poprawnego linku do repozytorium
 git remote remove origin
-git remote add origin https://github.com
+git remote add origin https://github.com/pldenity/moj-docker-home.git
 ```
 
 ### 5. Pierwsze wypchnięcie kodu na serwer (Push)
