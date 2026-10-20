@@ -78,8 +78,8 @@ git push -u origin main
 ### 💡 Ściągawka: Jak aktualizować to repozytorium w przyszłości?
 Jeśli dokonasz jakichkolwiek zmian w plikach na komputerze (np. dodasz nowy kontener do pliku compose), zaktualizuj repozytorium tymi trzema komendami:
 ```bash
-git add .
-git commit -m "Opis zmian które wprowadziłem"
+git add README.md
+git commit -m "add README.md"
 git push
 ```
 
