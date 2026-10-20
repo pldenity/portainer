@@ -31,4 +31,56 @@ yay -S visual-studio-code-bin
 Po instalacji Dockera, przejdź do katalogu z plikiem `docker-compose.yml` i wpisz:
 ```bash
 docker compose up -d
+
+## 📑 Historia konfiguracji Gita dla tego projektu
+
+Poniżej znajduje się chronologiczny zapis komend użytych do skonfigurowania tego repozytorium na systemie EndeavourOS i powiązania go z kontem GitHub.
+
+### 1. Konfiguracja tożsamości autora
+Ustawienie globalnych danych dla programu Git na komputerze:
+```bash
+git config --global user.email "uderzane@gmail.com"
+git config --global user.name "Tomek Dobry"
+```
+
+### 2. Ochrona danych (Ignorowanie plików)
+Dodanie folderu z bazą danych Portainera do pliku `.gitignore`, aby nie został wysłany na publiczne repozytorium:
+```bash
+echo "data/" >> .gitignore
+```
+
+### 3. Przygotowanie i zatwierdzenie plików (Commit)
+Zgłoszenie plików projektu do śledzenia i wykonanie pierwszego lokalnego zapisu w historii:
+```bash
+git add docker-compose.yml .gitignore README.md 
+git commit -m "Pierwsza konfiguracja - Portainer"
+```
+
+### 4. Zarządzanie gałęziami i połączeniem zdalnym
+Ustawienie domyślnej gałęzi na `main`, usunięcie wcześniejszego błędnego odnośnika oraz podpięcie właściwego adresu URL do profilu `pldenity`:
+```bash
+# Zmiana nazwy gałęzi na standard GitHub
+git branch -M main
+
+# Czyszczenie złego adresu i dodanie poprawnego linku do repozytorium
+git remote remove origin
+git remote add origin https://github.com
+```
+
+### 5. Pierwsze wypchnięcie kodu na serwer (Push)
+Wysłanie lokalnej historii i plików bezpośrednio na platformę GitHub:
+```bash
+git push -u origin main
+```
+
+---
+
+### 💡 Ściągawka: Jak aktualizować to repozytorium w przyszłości?
+Jeśli dokonasz jakichkolwiek zmian w plikach na komputerze (np. dodasz nowy kontener do pliku compose), zaktualizuj repozytorium tymi trzema komendami:
+```bash
+git add .
+git commit -m "Opis zmian które wprowadziłem"
+git push
+```
+
 ```
